@@ -1,0 +1,5 @@
+.DS_Store
+.claude/
+# original photo files; the site uses the renamed copies
+photos/IMG_*.jpg
+photos/676dbffb-999f-4861-bd70-c1f77cd831bc.JPG
