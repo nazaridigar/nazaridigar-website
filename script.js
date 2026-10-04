@@ -5,7 +5,7 @@
 ------------------------------------------------------------------- */
 const SITE = {
   donateUrl: "",        // your Zeffy donation form link, e.g. "https://www.zeffy.com/donation-form/..."
-  ticketUrl: "",        // Zeffy ticket link for the "When Trials Come" event
+  ticketUrl: "https://www.zeffy.com/en-US/ticketing/when-trials-come",       // Zeffy ticket link for the "When Trials Come" event
   ein: "42-3268532",             // e.g. "12-3456789"
   email: "nazaridigar.usa@gmail.com",           // public contact email
   mailingAddress: "",   // where checks can be mailed, e.g. "Nazari Digar, PO Box 123, City, ST 00000"

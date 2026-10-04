@@ -223,6 +223,8 @@ a { color: var(--teal-bright); }
 .give-list svg { flex: none; color: var(--gold); margin-top: 0.15rem; }
 .give-list h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
 .give-list p { margin: 0; color: #d5e8ea; font-size: 1rem; }
+.give-list li > div { min-width: 0; }
+.give-list strong, .notice strong { color: #fff; overflow-wrap: anywhere; }
 
 /* Contact */
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
