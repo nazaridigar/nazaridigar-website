@@ -234,14 +234,11 @@
           <h2>Your gift helps a family feel seen</h2>
           <p class="lead">Every contribution supports people with Down syndrome and their families in Tajikistan.</p>
 
-          <div data-donate-ready hidden>
-            <a class="btn btn-gold btn-lg" href="#donate" data-donate>Donate online</a>
-            <p class="fine">Secure giving through Zeffy. You will receive a receipt by email.</p>
+          <div class="actions">
+            <a class="btn btn-gold btn-lg" href="#donate" data-pay="stripe" target="_blank" rel="noopener" hidden>Give by card</a>
+            <a class="btn btn-gold btn-lg" href="#donate" data-pay="paypal" target="_blank" rel="noopener" hidden>Give with PayPal</a>
           </div>
-          <div data-donate-pending>
-            <p class="notice">To give today, send your gift by Zelle to <strong>nazaridigar.usa@gmail.com</strong>. Online card giving is opening soon.</p>
-            <a class="btn btn-gold btn-lg" href="#contact">Questions? Contact us</a>
-          </div>
+          <p class="notice">You can also send your gift by Zelle to <strong>nazaridigar.usa@gmail.com</strong>.<span data-pay-pending="stripe"> Card giving is opening soon.</span></p>
 
           <p class="fine">Nazari Digar is a 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law <span data-ein></span>.</p>
         </div>

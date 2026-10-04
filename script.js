@@ -4,7 +4,8 @@
    anything that is still empty.
 ------------------------------------------------------------------- */
 const SITE = {
-  donateUrl: "",        // your Zeffy donation form link, e.g. "https://www.zeffy.com/donation-form/..."
+  stripeUrl: "",        // Stripe payment link for card donations, e.g. "https://donate.stripe.com/..."
+  paypalUrl: "https://www.paypal.com/donate/?hosted_button_id=VV5JKS7ZLL2F6",
   ticketUrl: "https://www.zeffy.com/en-US/ticketing/when-trials-come",       // Zeffy ticket link for the "When Trials Come" event
   ein: "42-3268532",             // e.g. "12-3456789"
   email: "nazaridigar.usa@gmail.com",           // public contact email
@@ -16,18 +17,19 @@ const SITE = {
 (function () {
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
-  // Donate buttons: go to Zeffy when the link exists, otherwise to the Ways to Give section.
-  $$("[data-donate]").forEach((a) => {
-    if (SITE.donateUrl) {
-      a.href = SITE.donateUrl;
-      a.target = "_blank";
-      a.rel = "noopener";
-    } else {
-      a.href = "#donate";
-    }
+  // Donate buttons in the header and hero lead to the Ways to Give section.
+  $$("[data-donate]").forEach((a) => (a.href = "#donate"));
+
+  // Payment buttons appear once their link is set above.
+  [["stripe", SITE.stripeUrl], ["paypal", SITE.paypalUrl]].forEach(([name, url]) => {
+    $$('[data-pay="' + name + '"]').forEach((a) => {
+      if (url) {
+        a.href = url;
+        a.hidden = false;
+      }
+    });
+    $$('[data-pay-pending="' + name + '"]').forEach((el) => (el.hidden = !!url));
   });
-  $$("[data-donate-ready]").forEach((el) => (el.hidden = !SITE.donateUrl));
-  $$("[data-donate-pending]").forEach((el) => (el.hidden = !!SITE.donateUrl));
 
   // Event tickets
   $$("[data-ticket]").forEach((a) => {

@@ -218,6 +218,7 @@ a { color: var(--teal-bright); }
 /* Donate */
 .split-donate { align-items: start; }
 .notice { border-left: 4px solid var(--gold); padding: 0.2rem 0 0.2rem 1rem; margin: 1.5rem 0; color: #fff; }
+.split-donate .actions { margin-top: 1.5rem; }
 .section-teal .fine { color: #c9e0e3; margin-top: 1.5rem; max-width: 34em; }
 .give-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .give-list li { display: flex; gap: 1rem; padding: 1.25rem 1.4rem; border-radius: var(--radius); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); }
