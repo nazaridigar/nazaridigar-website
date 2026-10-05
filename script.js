@@ -4,7 +4,7 @@
    anything that is still empty.
 ------------------------------------------------------------------- */
 const SITE = {
-  stripeUrl: "",        // Stripe payment link for card donations, e.g. "https://donate.stripe.com/..."
+  stripeUrl: "https://buy.stripe.com/28EdR96zYdeN7Iudz57bW00",       // Stripe payment link for card donations, e.g. "https://donate.stripe.com/..."
   paypalUrl: "https://www.paypal.com/donate/?hosted_button_id=VV5JKS7ZLL2F6",
   ticketUrl: "https://www.zeffy.com/en-US/ticketing/when-trials-come",       // Zeffy ticket link for the "When Trials Come" event
   ein: "42-3268532",             // e.g. "12-3456789"
