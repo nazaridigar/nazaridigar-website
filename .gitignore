@@ -5,3 +5,5 @@ photos/IMG_*.jpg
 photos/676dbffb-999f-4861-bd70-c1f77cd831bc.JPG
 # event banner for Zeffy, not part of the site
 banner/
+# filings and letters, not part of the site
+documents/
