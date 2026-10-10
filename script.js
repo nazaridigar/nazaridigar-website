@@ -108,6 +108,18 @@ const SITE = {
     });
   }
 
+  // Report button clicks to Google Analytics.
+  const track = (selector, name, params) => {
+    $$(selector).forEach((a) => {
+      a.addEventListener("click", () => {
+        if (typeof gtag === "function") gtag("event", name, params(a));
+      });
+    });
+  };
+  track("[data-donate]", "donate_button_click", (a) => ({ button_text: a.textContent.trim() }));
+  track("[data-pay]", "give_click", (a) => ({ method: a.dataset.pay }));
+  track("[data-ticket]", "ticket_click", () => ({ event_name: "When Trials Come" }));
+
   // Footer year
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
