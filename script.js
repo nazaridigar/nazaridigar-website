@@ -9,10 +9,12 @@ const SITE = {
   // Monthly card giving: one Stripe recurring payment link per amount.
   // Paste each link's URL below. Tiers with an empty url are not shown.
   monthlyTiers: [
-    { amount: 10,  url: "" },
-    { amount: 25,  url: "" },
-    { amount: 50,  url: "" },
-    { amount: 100, url: "" }
+    { amount: 5,   url: "https://donate.stripe.com/dRmaEX2jIgqZ0g21Qn7bW03" },
+    { amount: 10,  url: "https://donate.stripe.com/14A5kD0bA2A9aUGbqX7bW04" },
+    { amount: 20,  url: "https://donate.stripe.com/dRm28r6zY1w5gf0fHd7bW05" },
+    { amount: 30,  url: "https://donate.stripe.com/dRm7sL1fE7Ut3se8eL7bW06" },
+    { amount: 50,  url: "https://donate.stripe.com/28E6oH9Ma6Qp1k68eL7bW02" },
+    { amount: 100, url: "https://donate.stripe.com/5kQ6oHbUi0s10g20Mj7bW01" }
   ],
   ticketUrl: "https://www.zeffy.com/en-US/ticketing/when-trials-come",       // Zeffy ticket link for the "When Trials Come" event
   ein: "42-3268532",             // e.g. "12-3456789"
