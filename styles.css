@@ -220,6 +220,12 @@ a { color: var(--teal-bright); }
 .notice { border-left: 4px solid var(--gold); padding: 0.2rem 0 0.2rem 1rem; margin: 1.5rem 0; color: #fff; }
 .split-donate .actions { margin-top: 1.5rem; }
 .section-teal .fine { color: #c9e0e3; margin-top: 1.5rem; max-width: 34em; }
+.monthly { margin-top: 2rem; padding: 1.25rem 1.4rem; border-radius: var(--radius); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); scroll-margin-top: calc(var(--header-h) + 16px); }
+.monthly h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+.monthly p { margin: 0 0 1rem; color: #d5e8ea; }
+.amount-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.btn-amount { background: transparent; color: #fff; border-color: var(--gold); }
+.btn-amount:hover { background: var(--gold); color: var(--teal-deep); }
 .give-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .give-list li { display: flex; gap: 1rem; padding: 1.25rem 1.4rem; border-radius: var(--radius); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); }
 .give-list svg { flex: none; color: var(--gold); margin-top: 0.15rem; }
