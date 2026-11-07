@@ -6,6 +6,16 @@
 const SITE = {
   stripeUrl: "https://buy.stripe.com/28EdR96zYdeN7Iudz57bW00",       // Stripe payment link for card donations, e.g. "https://donate.stripe.com/..."
   paypalUrl: "https://www.paypal.com/donate/?hosted_button_id=VV5JKS7ZLL2F6",
+  // Monthly card giving: one Stripe recurring payment link per amount.
+  // Paste each link's URL below. Tiers with an empty url are not shown.
+  monthlyTiers: [
+    { amount: 5,   url: "https://donate.stripe.com/dRmaEX2jIgqZ0g21Qn7bW03" },
+    { amount: 10,  url: "https://donate.stripe.com/14A5kD0bA2A9aUGbqX7bW04" },
+    { amount: 20,  url: "https://donate.stripe.com/dRm28r6zY1w5gf0fHd7bW05" },
+    { amount: 30,  url: "https://donate.stripe.com/dRm7sL1fE7Ut3se8eL7bW06" },
+    { amount: 50,  url: "https://donate.stripe.com/28E6oH9Ma6Qp1k68eL7bW02" },
+    { amount: 100, url: "https://donate.stripe.com/5kQ6oHbUi0s10g20Mj7bW01" }
+  ],
   ticketUrl: "https://www.zeffy.com/en-US/ticketing/when-trials-come",       // Zeffy ticket link for the "When Trials Come" event
   ein: "42-3268532",             // e.g. "12-3456789"
   email: "nazaridigar.usa@gmail.com",           // public contact email
@@ -30,6 +40,23 @@ const SITE = {
     });
     $$('[data-pay-pending="' + name + '"]').forEach((el) => (el.hidden = !!url));
   });
+
+  // Monthly giving tiers (shown only for tiers that have a Stripe link).
+  const monthlyWrap = document.querySelector("[data-monthly-wrap]");
+  const monthlyGrid = document.querySelector("[data-monthly-grid]");
+  if (monthlyWrap && monthlyGrid) {
+    (SITE.monthlyTiers || []).filter((t) => t.url).forEach((t) => {
+      const a = document.createElement("a");
+      a.className = "btn btn-amount";
+      a.href = t.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.dataset.monthlyAmount = t.amount;
+      a.textContent = "$" + t.amount + " / month";
+      monthlyGrid.appendChild(a);
+    });
+    monthlyWrap.hidden = monthlyGrid.children.length === 0;
+  }
 
   // Event tickets
   $$("[data-ticket]").forEach((a) => {
@@ -118,6 +145,7 @@ const SITE = {
   };
   track("[data-donate]", "donate_button_click", (a) => ({ button_text: a.textContent.trim() }));
   track("[data-pay]", "give_click", (a) => ({ method: a.dataset.pay }));
+  track("[data-monthly-amount]", "give_click", (a) => ({ method: "stripe_monthly", amount: a.dataset.monthlyAmount }));
   track("[data-ticket]", "ticket_click", () => ({ event_name: "When Trials Come" }));
 
   // Footer year
